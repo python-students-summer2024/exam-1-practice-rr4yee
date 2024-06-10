@@ -15,7 +15,7 @@ def main():
   """
 
   # for example... the following line will call the bark() function in problem_set_1 whenever this main.py file is run.
-  weather_helper()
+  get_random_int()
 
 # call the main function
 main()
