@@ -29,5 +29,33 @@ def weather_helper():
     3. Assume the user will respond to any yes/no question with an affirmative response such as "yes", "yeah", "yup"; or a negative response such as "no", "nah", or "nope".
     2. Do not print anything more than what is requested in the instructions.
     4. The capitalization of the user's responses must not matter to the outcome of the program.
-  """
+  """ 
+  temperature = int(input("Enter the current temperature in degrees Farenheit: "))
+  if not -70 <= temperature <= 134:
+    print("Invalid temperature!")
+    return
+  
+  if temperature < 40:
+    snow = input("Is it snowing? ").strip().lower()
+    if snow in ["yes", "yeah", "yup"]:
+      jacket = input("Are you wearing a warm jacket? ").lower().strip()
+      if jacket in ["yes", "yeah", "yup"]: 
+        print("Glad to hear you're dressed appropriately!")
+      elif jacket in ["no", "nah", "nope"]: 
+        print("What were you thinking when you left home today?!")
+    elif snow in ["no", "nah", "nope"]: 
+      rain = input("Is it raining? ").lower().strip()
+      if rain in ["yes", "yeah", "yup"]:
+        umbrella = input("Do you have an umbrella? ").lower().strip()
+        if umbrella in ["yes", "yeah", "yup"]: 
+          print("Good job staying dry!")
+        elif umbrella in ["no", "nah", "nope"]: 
+          print("You must enjoy getting wet!")
+  
+  elif temperature > 90: 
+    air = input("Do you have air conditioning? (yes or no) ").lower().strip()
+    if air in ["yes", "yeah", "yup"]:
+      print("Stay cool indoors.")
+    elif air in ["no", "nah", "nope"]: 
+      print("I hope you have a fan.")
 
