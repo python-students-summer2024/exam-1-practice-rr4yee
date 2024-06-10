@@ -13,7 +13,7 @@ import random
 # The function must return a random integer between these two values, inclusive.
 # Use the function random.randint() to generate the pseudo-random number.
 
-def get_random_int(): 
+def get_random_int(min, max): 
     return random.randint(min, max)
 
 ##--------------------- Function #2 ---------------------##
@@ -47,21 +47,47 @@ def get_guess():
 # At the end, the function, assuming the user has entered all valid guesses, the program prints out the percent of guesses that user guessed correctly, following the format: "You guessed 75% of the random numbers correctly."
 
 def play_game(): 
-   def round(guess, correct): 
-      if guess == 4:
-         percent = (correct / 4) * 100
-         print(f"You guessed {int(percent)}% of the random numbers correctly.")
-         return
-      result = get_guess(5)
-      if result == -1:
-         print("Invalid response!")
-         return
-      elif result: 
-         print("Correct!")
-         correct += 1
-      else: 
-         print("Wrong!")
-        
-    round(guess + 1, correct)
-round(0, 0)
-   
+    correct = 0
+
+    result = get_guess(5)
+    if result == -1:
+        print("Invalid response!")
+        return
+    elif result:
+        print("Correct!")
+        correct += 1
+    else: 
+        print("Wrong!")
+    
+    result = get_guess(5)
+    if result == -1:
+      print("Invalid response!")
+      return
+    elif result:
+      print("Correct!")
+      correct += 1
+    else: 
+      print("Wrong!")
+
+    result = get_guess(5)
+    if result == -1:
+      print("Invalid response!")
+      return
+    elif result:
+      print("Correct!")
+      correct += 1
+    else: 
+      print("Wrong!")
+
+    result = get_guess(5)
+    if result == -1:
+      print("Invalid response!")
+      return
+    elif result:
+      print("Correct!")
+      correct += 1
+    else: 
+      print("Wrong!")
+    
+    percent = (correct / 4) * 100
+    print(f"You guessed {int(percent)}% if the random numbers correctly.")
